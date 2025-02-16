@@ -82,8 +82,7 @@ article {
     article {
         display: flex;  /* Change to flexbox for horizontal alignment */
         flex-direction: row;  /* Align content horizontally */
-        align-items: flex-start;  /* Align text to the top */
-        gap: 20px;  /* Space between image and text */
+        gap: 20px; /* Space between image and text */
     }
 
     .article-details {
