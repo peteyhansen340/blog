@@ -1,5 +1,3 @@
-// Example JavaScript that could populate book data dynamically in the future
-
 document.addEventListener('DOMContentLoaded', () => {
     const books = [
         {
@@ -22,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const articlesContainer = document.querySelector('.articles');
 
+    // Check if there are books to display
+    if (books.length === 0) {
+        articlesContainer.innerHTML = '<p>No articles to display at the moment.</p>';
+        return;
+    }
+
     books.forEach(book => {
         const article = document.createElement('article');
         article.innerHTML = `
@@ -29,11 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2>${book.title}</h2>
                 <p class="author">by ${book.author}</p>
                 <p class="publish-date">Published: ${book.date}</p>
-                <p class="summary">${book.summary}</p>
+                <p class="summary">${book.summary || 'No summary available.'}</p>
             </div>
             <div class="article-content">
-                <img src="${book.image}" alt="${book.title} cover image">
-                <p class="description">${book.description}</p>
+                <img src="${book.image || 'default.jpg'}" alt="${book.title} cover image">
+                <p class="description">${book.description || 'No description available.'}</p>
             </div>
         `;
         articlesContainer.appendChild(article);
