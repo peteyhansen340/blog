@@ -14,9 +14,6 @@ header {
     text-align: center;
     padding: 20px;
     margin-bottom: 30px;
-    width: 90%; /* Ensures the width matches the navbar */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 header h1 {
@@ -61,14 +58,12 @@ nav ul li a:hover {
 .articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
     padding: 20px;
-    width: 90%; /* Restrict width of the articles section */
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    max-width: 1200px; /* Max width for better control */
 }
 
-/* Article */
 article {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -77,59 +72,17 @@ article {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px; /* Space between articles */
 }
 
-.article-details {
-    padding-right: 20px;
-    text-align: right; /* Right align all text */
-    border-right: 2px solid #ccc; /* Add right border */
-    padding-left: 15px;
-    padding-right: 15px;
-    line-height: 1.3; /* Slightly reduced line spacing */
-}
-
-.article-details h2 {
-    font-size: 1.8em;
-    color: #AF1B3F;
-    margin-top: 0; /* Adjusted to align with date */
-}
-
-.article-details p {
-    font-size: 1.1em;
-    color: #333;
-    margin: 5px 0; /* Reduced space between lines */
-}
-
-.article-details .publish-date {
-    font-size: 1.3em; /* Increased font size for date */
-}
-
-.article-content {
-    display: flex;
-    justify-content: center; /* Center content */
-}
-
-.article-content img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Ensures image is centered */
-    margin: 0 auto; /* Centers the image */
-}
-
-.article-content .description {
-    font-size: 1.1em;
-    color: #555;
-}
-
-/* Horizontal Layout for Larger Screens */
+/* Horizontal Layout for Full Screen */
 @media (min-width: 1024px) {
     .articles {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Make the grid more spacious */
     }
 
     article {
-        grid-template-columns: 1fr 2fr; /* Keep each article in two parts */
+        grid-template-columns: 1fr 2fr; /* Maintain side-by-side layout for each article */
+        margin: 0 20px; /* Optional: add spacing between articles */
     }
 }
 
