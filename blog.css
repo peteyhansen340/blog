@@ -58,10 +58,10 @@ nav ul li a:hover {
 .articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: 1fr; /* Default to a single column layout */
     padding: 20px;
     margin: 0 auto;
-    max-width: 1200px; /* Max width for better control */
+    max-width: 1200px;
 }
 
 article {
@@ -74,15 +74,14 @@ article {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Horizontal Layout for Full Screen */
+/* Horizontal Layout for Larger Screens */
 @media (min-width: 1024px) {
     .articles {
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Make the grid more spacious */
+        grid-template-columns: repeat(3, 1fr); /* Create 3 columns for large screens */
     }
 
     article {
         grid-template-columns: 1fr 2fr; /* Maintain side-by-side layout for each article */
-        margin: 0 20px; /* Optional: add spacing between articles */
     }
 }
 
