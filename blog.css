@@ -58,10 +58,8 @@ nav ul li a:hover {
 .articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: 1fr; /* Default to a single column layout */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Default to a single column layout */
     padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px;
 }
 
 /* Article */
@@ -82,7 +80,24 @@ article {
     }
 
     article {
-        grid-template-columns: 1fr 2fr; /* Keep each article in two parts */
+        display: flex;  /* Change to flexbox for horizontal alignment */
+        flex-direction: row;  /* Align content horizontally */
+        align-items: flex-start;  /* Align text to the top */
+        gap: 20px;  /* Space between image and text */
+    }
+
+    .article-details {
+        flex: 1;  /* Allow the text part to take up available space */
+    }
+
+    .article-content {
+        flex: 1;  /* Allow the image part to take up available space */
+        text-align: center;  /* Center the image */
+    }
+
+    .article-content img {
+        max-width: 100%;
+        border-radius: 8px;
     }
 }
 
