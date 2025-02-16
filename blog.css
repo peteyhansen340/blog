@@ -58,8 +58,10 @@ nav ul li a:hover {
 .articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust grid for responsiveness */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
     padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Max width for better control */
 }
 
 article {
@@ -102,6 +104,6 @@ footer {
     padding: 20px;
     background-color: #473144;
     color: #fff;
-    position: relative; /* Changed to prevent footer from sticking to bottom */
+    position: relative;
     width: 100%;
 }
