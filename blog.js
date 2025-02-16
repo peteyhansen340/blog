@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             title: "Septimus Heap Book One: Magyk",
             date: "July 5, 2022",
-            description: "If you enjoy stories about seventh sons of seventh sons and magyk this is the book for you.",
+            description: "If you enjoy stories about seventh sons of seventh sons and magyk, this is the book for you.",
             imgSrc: "https://upload.wikimedia.org/wikipedia/en/5/5f/Magkycover2.jpg",
             imgAlt: "Book cover for Septimus Heap 1",
             ages: "10-14",
@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    // Loop through the books and create the article HTML structure
     articles.forEach(book => {
         const article = document.createElement('article');
         article.innerHTML = `
@@ -63,4 +64,3 @@ document.addEventListener('DOMContentLoaded', () => {
         articlesContainer.appendChild(article);
     });
 });
-

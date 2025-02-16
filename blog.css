@@ -58,42 +58,53 @@ nav ul li a:hover {
 .articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: 1fr; /* Default to a single column layout for small screens */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Default to a responsive grid */
     padding: 20px;
 }
 
 /* Article */
 article {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two parts for each article */
+    gap: 20px;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* For large screens (1024px and above) */
+.article-details {
+    padding-right: 20px;
+}
+
+.article-details h2 {
+    font-size: 1.8em;
+    color: #AF1B3F;
+}
+
+.article-details p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.article-content img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.article-content .description {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Horizontal Layout for Larger Screens */
 @media (min-width: 1024px) {
     .articles {
-        grid-template-columns: repeat(3, 1fr); /* Create 3 columns for large screens */
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
     }
 
     article {
-        display: flex; /* Switch to flex layout for horizontal alignment */
-        flex-direction: row; /* Align content horizontally */
-        gap: 20px; /* Space between text and image */
-    }
-
-    .article-details {
-        flex: 2; /* Text part gets more space */
-    }
-
-    .article-content {
-        flex: 1; /* Image part gets less space */
-        text-align: center; /* Center the image */
-    }
-
-    .article-content img {
-        max-width: 100%;
-        border-radius: 8px;
+        grid-template-columns: 1fr 2fr; /* Keep each article in two parts */
     }
 }
 
@@ -103,6 +114,7 @@ footer {
     padding: 20px;
     background-color: #473144;
     color: #fff;
-    position: relative;
+    position: relative; /* Prevent footer from sticking to the bottom */
     width: 100%;
 }
+
