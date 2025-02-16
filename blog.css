@@ -58,8 +58,10 @@ nav ul li a:hover {
 .articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust grid for responsiveness */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
     padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Max width for better control */
 }
 
 article {
@@ -72,28 +74,16 @@ article {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.article-details {
-    padding-right: 20px;
-}
+/* Horizontal Layout for Full Screen */
+@media (min-width: 1024px) {
+    .articles {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Make the grid more spacious */
+    }
 
-.article-details h2 {
-    font-size: 1.8em;
-    color: #AF1B3F;
-}
-
-.article-details p {
-    font-size: 1.1em;
-    color: #333;
-}
-
-.article-content img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.article-content .description {
-    font-size: 1.1em;
-    color: #555;
+    article {
+        grid-template-columns: 1fr 2fr; /* Maintain side-by-side layout for each article */
+        margin: 0 20px; /* Optional: add spacing between articles */
+    }
 }
 
 /* Footer */
@@ -102,6 +92,6 @@ footer {
     padding: 20px;
     background-color: #473144;
     color: #fff;
-    position: relative; /* Changed to prevent footer from sticking to bottom */
+    position: relative;
     width: 100%;
 }
