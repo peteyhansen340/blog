@@ -64,6 +64,7 @@ nav ul li a:hover {
     max-width: 1200px;
 }
 
+/* Article */
 article {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -81,7 +82,7 @@ article {
     }
 
     article {
-        grid-template-columns: 1fr 2fr; /* Maintain side-by-side layout for each article */
+        grid-template-columns: 1fr 2fr; /* Keep each article in two parts */
     }
 }
 
