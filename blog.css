@@ -58,40 +58,37 @@ nav ul li a:hover {
 .articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Default to a single column layout */
+    grid-template-columns: 1fr; /* Default to a single column layout for small screens */
     padding: 20px;
 }
 
 /* Article */
 article {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Horizontal Layout for Larger Screens */
+/* For large screens (1024px and above) */
 @media (min-width: 1024px) {
     .articles {
         grid-template-columns: repeat(3, 1fr); /* Create 3 columns for large screens */
     }
 
     article {
-        display: flex;  /* Change to flexbox for horizontal alignment */
-        flex-direction: row;  /* Align content horizontally */
-        gap: 20px; /* Space between image and text */
+        display: flex; /* Switch to flex layout for horizontal alignment */
+        flex-direction: row; /* Align content horizontally */
+        gap: 20px; /* Space between text and image */
     }
 
     .article-details {
-        flex: 1;  /* Allow the text part to take up available space */
+        flex: 2; /* Text part gets more space */
     }
 
     .article-content {
-        flex: 1;  /* Allow the image part to take up available space */
-        text-align: center;  /* Center the image */
+        flex: 1; /* Image part gets less space */
+        text-align: center; /* Center the image */
     }
 
     .article-content img {
